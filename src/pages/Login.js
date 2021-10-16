@@ -4,7 +4,6 @@ import LoginInput from "../components/LoginInput";
 const Login = () => {
   return (
     <>
-      <img></img>
       <LoginInput />
     </>
   );
