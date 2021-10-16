@@ -12,15 +12,12 @@ const LoginInput = () => {
 
   const demi = useSelector((state) => state.Demi);
   const dispatch = useDispatch();
-
   const onChangeId = (e) => {
     setID(e.target.value);
   };
-
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     const find = demi.find((i) => i.id === id);
