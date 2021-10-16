@@ -4,15 +4,12 @@ import { Link } from "react-router-dom";
 const LoginInput = () => {
   const [id, setID] = useState("");
   const [password, setPassword] = useState("");
-
   const onChangeId = (e) => {
     setID(e.target.value);
   };
-
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
-
   const onSubmit = (e) => {
     e.preventDefualt();
   };
