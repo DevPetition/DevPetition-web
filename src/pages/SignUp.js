@@ -1,12 +1,12 @@
 import React from "react";
 import SignUP from "../components/SignUP";
+import Temp from "../components/temp";
 
 const SignUp = () => {
   return (
-    <>
-      <img></img>
+    <Temp>
       <SignUP />
-    </>
+    </Temp>
   );
 };
 

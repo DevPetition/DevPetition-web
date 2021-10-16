@@ -73,3 +73,44 @@ label {
   left: calc(50% - 70px);
   top: calc(16% - 70px);
 }
+
+.checkBut {
+  position: absolute;
+  background: #1bdeff;
+  width: 80px;
+  height: 35px;
+  right: 24%;
+  top: 35%;
+  border-radius: 50px;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  border: none;
+}
+.checkBut2 {
+  position: absolute;
+  background: #1bdeff;
+  width: 80px;
+  height: 35px;
+  right: 24%;
+  top: 45%;
+  border-radius: 50px;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  border: none;
+}
+.checkBut:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.checkBut2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
