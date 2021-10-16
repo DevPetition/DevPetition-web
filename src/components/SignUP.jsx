@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import logo from "../img/rogo.png";
+import Temp from "./temp";
+import "../styles/LoginInput.css";
+import { Link } from "react-router-dom";
 
 const SignUpInput = () => {
   const [name, setName] = useState("");
@@ -9,7 +13,7 @@ const SignUpInput = () => {
   const [passwordCheck, setPasswordCheck] = useState(false);
 
   const onSubmit = (e) => {
-    e.preventDefualt();
+    e.preventDefault();
   };
 
   const onChangeName = (e) => {
@@ -42,38 +46,113 @@ const SignUpInput = () => {
   }, [password2]);
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <label>
-          이름
-          <input type="text" value={name} onChange={onChangeName} />
-        </label>
-        <label>
-          이메일
-          <input type="text" value={email} onChange={onChangeEmail} />
-          <button>중복확인</button>
-        </label>
-        <label>
-          아이디
-          <input type="text" value={id} onChange={onChangeId} />
-          <button>중복확인</button>
-        </label>
-        <label>
-          비밀번호
-          <input type="password" value={password} onChange={onChangePassword} />
-        </label>
-        <label>
-          비밀번호 확인
-          <input
-            type="password"
-            value={password2}
-            onChange={onChangePassword2}
-          />
-        </label>
-        {passwordCheck ? <p>비밀번호가 틀립니다</p> : ""}
-        <button>회원가입하기</button>
-      </form>
-    </>
+    <Temp>
+      <img src={logo} className="logo"></img>
+      <div className="maxSize">
+        <form onSubmit={onSubmit} className="userIDPW">
+          <label>
+            <div
+              style={{
+                margin: "0 0 30px 10px",
+                fontSize: "24px",
+                fontWeight: 700,
+                paddingBottom: "12px",
+              }}
+            >
+              이름
+            </div>
+            <input
+              className="userID"
+              type="text"
+              value={name}
+              onChange={onChangeName}
+            />
+          </label>
+          <label>
+            <div
+              style={{
+                margin: "0 0 30px 10px",
+                fontSize: "24px",
+                fontWeight: 700,
+                paddingBottom: "12px",
+              }}
+            >
+              이메일
+            </div>
+            <input
+              className="userID"
+              type="text"
+              value={email}
+              onChange={onChangeEmail}
+            />
+            <button className="checkBut">중복확인</button>
+          </label>
+          <label>
+            <div
+              style={{
+                margin: "0 0 30px 10px",
+                fontSize: "24px",
+                fontWeight: 700,
+                paddingBottom: "12px",
+              }}
+            >
+              아이디
+            </div>
+            <input
+              className="userID"
+              type="text"
+              value={id}
+              onChange={onChangeId}
+            />
+            <button className="checkBut2">중복확인</button>
+          </label>
+          <label>
+            <div
+              style={{
+                margin: "0 0 30px 10px",
+                fontSize: "24px",
+                fontWeight: 700,
+                paddingBottom: "12px",
+              }}
+            >
+              비밀번호
+            </div>
+            <input
+              className="userID"
+              type="password"
+              value={password}
+              onChange={onChangePassword}
+            />
+          </label>
+          <label>
+            <div
+              style={{
+                margin: "0 0 30px 10px",
+                fontSize: "24px",
+                fontWeight: 700,
+                paddingBottom: "12px",
+              }}
+            >
+              비밀번호 확인
+            </div>
+            <input
+              className="userID"
+              type="password"
+              value={password2}
+              onChange={onChangePassword2}
+            />
+          </label>
+          {passwordCheck ? <p>비밀번호가 틀립니다</p> : ""}
+          <button className="loginBt">회원가입하기</button>
+        </form>
+        <p className="noaccount">
+          <span style={{ paddingRight: "15px" }}>계정이 있나요?</span>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <span style={{ color: "#00AFE9" }}>로그인하러가기</span>
+          </Link>
+        </p>
+      </div>
+    </Temp>
   );
 };
 
