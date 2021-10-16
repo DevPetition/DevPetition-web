@@ -8,7 +8,14 @@ const App = () => {
   const isLog = useSelector((state) => state.login.isLog);
   return (
     <BrowserRouter>
-      {isLog ? "" : <Route path="/" exact component={() => <Login />} /><Route path="/signup" component={Signup}></Route>}
+      {isLog ? (
+        ""
+      ) : (
+        <BrowserRouter>
+          <Route path="/" exact component={() => <Login />} />
+          <Route path="/signup" component={SignUp} />
+        </BrowserRouter>
+      )}
     </BrowserRouter>
   );
 };
