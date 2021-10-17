@@ -7,7 +7,7 @@ const initialState = {
     {
       user: "배가영",
       id: "loveGT",
-      password: "yoeng",
+      password: "young",
     },
     {
       user: "신수민성",

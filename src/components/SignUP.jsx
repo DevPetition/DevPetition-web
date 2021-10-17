@@ -81,7 +81,7 @@ const SignUpInput = () => {
             </div>
             <input
               className="userID"
-              type="text"
+              type="email"
               value={email}
               onChange={onChangeEmail}
             />

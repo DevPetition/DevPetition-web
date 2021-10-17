@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../styles/LoginInput.css";
 import Temp from "../components/temp";
@@ -6,15 +6,18 @@ import rogo from "../img/rogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { LOGIN } from "../redux/reducer";
 
-const LoginInput = () => {
+const LoginInput = memo(() => {
   const [id, setID] = useState("");
   const [password, setPassword] = useState("");
 
   const demi = useSelector((state) => state.Demi);
   const dispatch = useDispatch();
-  const onChangeId = (e) => {
-    setID(e.target.value);
-  };
+  const onChangeId = useCallback(
+    (e) => {
+      setID(e.target.value);
+    },
+    [id]
+  );
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -86,6 +89,6 @@ const LoginInput = () => {
       </div>
     </Temp>
   );
-};
+});
 
 export default LoginInput;
