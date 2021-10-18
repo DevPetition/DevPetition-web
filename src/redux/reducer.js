@@ -1,7 +1,7 @@
 const initialState = {
   login: {
-    isLog: false,
-    user: null,
+    isLog: true,
+    user: "소수연",
   },
   Demi: [
     {

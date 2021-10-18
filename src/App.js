@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import EmailReq from "./pages/EmailReq";
 import Login from "./pages/Login";
+import MainPages from "./pages/MainPages";
 import SignUp from "./pages/SignUp";
 
 const App = () => {
@@ -10,7 +11,12 @@ const App = () => {
   return (
     <BrowserRouter>
       {isLog ? (
-        ""
+        <BrowserRouter>
+          <Route path="/" exact component={MainPages} />
+          <Route path="/ranking" component={MainPages} />
+          <Route path="/leagueInfo" component={MainPages} />
+          <Route path="/myapply" component={MainPages} />
+        </BrowserRouter>
       ) : (
         <BrowserRouter>
           <Route path="/" exact component={() => <Login />} />
