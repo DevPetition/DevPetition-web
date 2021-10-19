@@ -1,38 +1,41 @@
 import React from "react";
 import League from "../img/league.png";
 import RankLogo from "../img/ranklogo.png";
+import "../styles/Rank.css";
 
 const LeagueRank = () => {
   const LeagueInfo = [
     {
-      rank: "1등",
+      rank: "신청 1등",
       people: "15234명",
-      image: "League",
+      image: League,
     },
     {
-      rank: "2등",
+      rank: "신청 2등",
       people: "1244명",
-      image: "League",
+      image: League,
     },
     {
-      rank: "3등",
+      rank: "신청 3등",
       people: "8219명",
-      image: "League",
+      image: League,
     },
   ];
 
   return (
-    <div>
-      {LeagueInfo.map((info) => {
-        <div>
-          <h1>{info.rank}</h1>
-          <img src={info.image} />
-          <span>
-            <img src={RankLogo} />
-            <p>{info.people}</p>
-          </span>
-        </div>;
-      })}
+    <div className="rankFrame">
+      <div className="rankdiv">
+        {LeagueInfo.map((info) => (
+          <div className="eachrank">
+            <h1 className="ranking">{info.rank}</h1>
+            <img className="leagueImg" src={info.image} />
+            <span className="people">
+              <img src={RankLogo} className="inlogo" />
+              <p>{info.people}</p>
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
